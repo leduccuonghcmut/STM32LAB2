@@ -226,33 +226,49 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-int counter = 50;
-int EN_State = 0;
+
+
+//int counter = 25;
 //int evenCounter = 0;
+//
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+//
+//	if (counter > 0) {
+//	    counter--;
+//	}
+//	if (counter <= 0) {
+//		counter = 25;
+//		evenCounter++;
+//
+//		if (evenCounter % 4 == 0) {
+//			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+//			evenCounter = 0;
+//		}
+//
+//		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+//
+//    	if(index_led >= MAX_LED){
+//    		index_led = 0;
+//    	}
+//
+//    	update7SEG(index_led++);
+//	}
+//
+//}
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
-	if (counter > 0) {
-	    counter--;
-	}
-	if (counter <= 0) {
-		counter = 50;
-		//evenCounter++;
-
-		//if (evenCounter % 2 == 0) {
+int counter7Seg = 25;
+void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
+	if (counter7Seg <= 0){
+		counter7Seg = 25;
+		update7SEG(index_led);
+		index_led ++;
+		if(index_led >= MAX_LED) {
+			index_led = 0;
 			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-			//evenCounter = 0;
-		//}
-
-		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-
-    	if(index_led >= MAX_LED){
-    		index_led = 0;
-    	}
-
-    	update7SEG(index_led++);
+		}
 	}
-
+	counter7Seg--;
 }
 /* USER CODE END 4 */
 
