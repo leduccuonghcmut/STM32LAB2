@@ -12,4 +12,5 @@ extern int second;
 void display7SEG(int num);
 void update7SEG(int index);
 void updateClockBuffer();
+
 #endif

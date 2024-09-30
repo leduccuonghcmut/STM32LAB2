@@ -2844,7 +2844,7 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_ranges  0x00000000000003b0      0x3c0 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_ranges  0x0000000000000770      0x158 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
 
-.debug_macro    0x0000000000000000    0x165d4
+.debug_macro    0x0000000000000000    0x165d8
  .debug_macro   0x0000000000000000      0x1b1 ./Core/Src/led_exercise5.o
  .debug_macro   0x00000000000001b1      0xa9c ./Core/Src/led_exercise5.o
  .debug_macro   0x0000000000000c4d      0x215 ./Core/Src/led_exercise5.o
@@ -2883,21 +2883,21 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000000000015239       0x69 ./Core/Src/led_exercise5.o
  .debug_macro   0x00000000000152a2       0xa0 ./Core/Src/led_exercise5.o
  .debug_macro   0x0000000000015342      0x1bf ./Core/Src/main.o
- .debug_macro   0x0000000000015501      0x1b1 ./Core/Src/software_timer.o
- .debug_macro   0x00000000000156b2      0x1a7 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_macro   0x0000000000015859      0x1b1 ./Core/Src/stm32f1xx_it.o
- .debug_macro   0x0000000000015a0a      0x198 ./Core/Src/system_stm32f1xx.o
- .debug_macro   0x0000000000015ba2      0x1bc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_macro   0x0000000000015d5e      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_macro   0x0000000000015ef6      0x203 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_macro   0x00000000000160f9      0x1aa ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_macro   0x00000000000162a3      0x199 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
- .debug_macro   0x000000000001643c      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
+ .debug_macro   0x0000000000015501      0x1b5 ./Core/Src/software_timer.o
+ .debug_macro   0x00000000000156b6      0x1a7 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_macro   0x000000000001585d      0x1b1 ./Core/Src/stm32f1xx_it.o
+ .debug_macro   0x0000000000015a0e      0x198 ./Core/Src/system_stm32f1xx.o
+ .debug_macro   0x0000000000015ba6      0x1bc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_macro   0x0000000000015d62      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_macro   0x0000000000015efa      0x203 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_macro   0x00000000000160fd      0x1aa ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_macro   0x00000000000162a7      0x199 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
+ .debug_macro   0x0000000000016440      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
 
 .debug_line     0x0000000000000000     0xa033
  .debug_line    0x0000000000000000      0x712 ./Core/Src/led_exercise5.o
- .debug_line    0x0000000000000712      0x7f0 ./Core/Src/main.o
- .debug_line    0x0000000000000f02      0x6bc ./Core/Src/software_timer.o
+ .debug_line    0x0000000000000712      0x7f2 ./Core/Src/main.o
+ .debug_line    0x0000000000000f04      0x6ba ./Core/Src/software_timer.o
  .debug_line    0x00000000000015be      0x6a1 ./Core/Src/stm32f1xx_hal_msp.o
  .debug_line    0x0000000000001c5f      0x73f ./Core/Src/stm32f1xx_it.o
  .debug_line    0x000000000000239e      0x6e3 ./Core/Src/system_stm32f1xx.o

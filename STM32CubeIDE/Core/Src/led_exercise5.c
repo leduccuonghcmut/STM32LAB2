@@ -86,7 +86,7 @@ void display7SEG(int num){
 
 const int MAX_LED = 4;
 int index_led = 0;
-int led_buffer[4] = {6, 7, 8, 9};
+int led_buffer[4] = {1, 2, 3, 4};
 
 void update7SEG(int index){
 	switch(index){
@@ -122,10 +122,10 @@ void update7SEG(int index){
 }
 
 int hour = 15, minute = 8, second = 50;
- void updateClockBuffer()
- {
+ void updateClockBuffer(){
 	  led_buffer[0] = hour / 10;
 	  led_buffer[1] = hour % 10;
 	  led_buffer[2] = minute / 10;
 	  led_buffer[3] = minute % 10;
  }
+
