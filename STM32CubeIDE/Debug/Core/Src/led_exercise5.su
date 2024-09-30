@@ -1,0 +1,3 @@
+led_exercise5.c:4:6:display7SEG	16	static
+led_exercise5.c:91:6:update7SEG	16	static
+led_exercise5.c:125:7:updateClockBuffer	4	static

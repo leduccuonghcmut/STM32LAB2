@@ -18,7 +18,9 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <led_exercise5.h>
 #include "main.h"
+#include "software_timer.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -88,16 +90,45 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_TIM2_Init();
   MX_GPIO_Init();
+
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
-
+  	setTimer(0, 2);
+    setTimer(1, 3);
+    setTimer(2, 5);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  if(timer_flag[0] == 1){
+		  setTimer(0, 100);
+		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	  }
+	  if(timer_flag[1] == 1){
+		  setTimer(1, 25);
+		  update7SEG(index_led);
+		  if(index_led >= MAX_LED-1) index_led = 0;
+		  else index_led++;
+	  }
+	  if(timer_flag[2] == 1){
+		  setTimer(2, 100);
+		  second++;
+		  if(second >= 60){
+			  second = 0;
+			  minute++;
+		  }
+		  if(minute >= 60) {
+			  minute = 0;
+			  hour++;
+		  }
+		  if(hour >= 24){
+			  hour = 0;
+		  }
+		  updateClockBuffer();
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -226,7 +257,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	timer_run();
+	timerRun();
 }
 /* USER CODE END 4 */
 
