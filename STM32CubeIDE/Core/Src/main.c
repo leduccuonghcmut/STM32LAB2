@@ -235,22 +235,22 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (counter > 0) {
 	    counter--;
 	}
-
 	if (counter <= 0) {
 		counter = 50;
 		evenCounter++;
 
 		if (evenCounter % 2 == 0) {
-		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-		  evenCounter = 0;
+			HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+			evenCounter = 0;
 		}
 
-    HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-    	if(index > MAX_LED){
-			  index = 0;
-    	}
-    	update7SEG(index++);
+		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 
+    	if(index_led >= MAX_LED){
+    		index_led = 0;
+    	}
+
+    	update7SEG(index_led++);
 	}
 
 }
