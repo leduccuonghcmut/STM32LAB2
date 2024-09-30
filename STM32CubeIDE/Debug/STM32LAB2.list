@@ -705,8 +705,8 @@ int main(void)
  80005bc:	685b      	ldr	r3, [r3, #4]
  80005be:	2b01      	cmp	r3, #1
  80005c0:	d118      	bne.n	80005f4 <main+0x84>
-		  setTimer(1, 25);
- 80005c2:	2119      	movs	r1, #25
+		  setTimer(1, 10);
+ 80005c2:	210a      	movs	r1, #10
  80005c4:	2001      	movs	r0, #1
  80005c6:	f000 f941 	bl	800084c <setTimer>
 		  update7SEG(index_led);
