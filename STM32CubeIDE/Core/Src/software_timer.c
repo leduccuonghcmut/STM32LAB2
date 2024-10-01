@@ -2,7 +2,6 @@
 
 int timer_counter[10] = {0};
 int timer_flag[10] = {0};
-
 void setTimer(int i, int duration){
 	timer_flag[i] = 0;
 	timer_counter[i] = duration;
