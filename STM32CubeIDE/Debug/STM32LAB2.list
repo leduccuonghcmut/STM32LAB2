@@ -320,8 +320,8 @@ int main(void)
  80002e0:	681b      	ldr	r3, [r3, #0]
  80002e2:	2b01      	cmp	r3, #1
  80002e4:	d1fb      	bne.n	80002de <main+0x22>
-		  setTimer(0, 1);
- 80002e6:	2101      	movs	r1, #1
+		  setTimer(0, 20);
+ 80002e6:	2114      	movs	r1, #20
  80002e8:	2000      	movs	r0, #0
  80002ea:	f000 f907 	bl	80004fc <setTimer>
 		  updateLEDMatrix(index_led_matrix);
