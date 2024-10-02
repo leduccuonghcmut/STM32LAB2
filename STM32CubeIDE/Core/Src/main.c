@@ -152,7 +152,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  if(timer_flag[0] == 1){
-		  setTimer(0, 20);
+		  setTimer(0, 1);
 		  updateLEDMatrix(index_led_matrix);
 		  index_led_matrix = (index_led_matrix + 1) % 8;
 	  }
