@@ -100,9 +100,9 @@ void updateLEDMatrix(int index){
 	}
 	uint8_t temp = matrix_buffer[index];
 	for(uint8_t i = 0; i < MAX_LED_MATRIX; i++){
-		if(temp % 2){// LSB of tem is 0
+		if(temp % 2){
 			HAL_GPIO_WritePin(GPIOB, ROW_PIN[i], SET);
-		}else{		// LSB of tem is 1
+		}else{
 			HAL_GPIO_WritePin(GPIOB, ROW_PIN[i], RESET);
 		}
 		temp >>= 1;
