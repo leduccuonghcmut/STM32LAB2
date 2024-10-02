@@ -98,16 +98,32 @@ void updateLEDMatrix(int index){
 		default:
 			break;
 	}
-	uint8_t tem = matrix_buffer[index];
+	uint8_t temp = matrix_buffer[index];
 	for(uint8_t i = 0; i < MAX_LED_MATRIX; i++){
-		if(tem % 2){// LSB of tem is 0
+		if(temp % 2){// LSB of tem is 0
 			HAL_GPIO_WritePin(GPIOB, ROW_PIN[i], SET);
 		}else{		// LSB of tem is 1
 			HAL_GPIO_WritePin(GPIOB, ROW_PIN[i], RESET);
 		}
-		tem >>= 1;
+		temp >>= 1;
 	}
 }
+void shiftLeftMatrixBuffer() {
+    uint8_t firstColumn = matrix_buffer[0];  // Lưu lại cột đầu tiên
+    for(int i = 0; i < MAX_LED_MATRIX - 1; i++) {
+        matrix_buffer[i] = matrix_buffer[i + 1];  // Dịch từng cột sang trái
+    }
+    matrix_buffer[MAX_LED_MATRIX - 1] = firstColumn;  // Đưa cột đầu tiên vào vị trí cuối cùng
+}
+
+void shiftRightMatrixBuffer() {
+    uint8_t lastColumn = matrix_buffer[MAX_LED_MATRIX - 1];  // Lưu lại cột cuối cùng
+    for(int i = MAX_LED_MATRIX - 1; i > 0; i--) {
+        matrix_buffer[i] = matrix_buffer[i - 1];  // Dịch từng cột sang phải
+    }
+    matrix_buffer[0] = lastColumn;  // Đưa cột cuối cùng vào vị trí đầu tiên
+}
+
 
 
 /* USER CODE END 0 */
@@ -147,17 +163,29 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Infinite loop */
-  //setTimer(0, 2);
+  setTimer(0, 2);
+  int shift_delay = 0;
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-	  //if(timer_flag[0] == 1){
-		  //setTimer(0, 1);
-		  updateLEDMatrix(index_led_matrix);
-		  index_led_matrix = (index_led_matrix + 1) % 8;
-	  //}
-		  HAL_Delay(1);
+//	  if(timer_flag[0] == 1){
+//		  setTimer(0, 1);
+//		  updateLEDMatrix(index_led_matrix);
+//		  index_led_matrix = (index_led_matrix + 1) % 8;
+//	  }
+	  if(timer_flag[0] == 1){
+	         setTimer(0, 1);
+	         updateLEDMatrix(index_led_matrix);
+	         index_led_matrix = (index_led_matrix + 1) % 8;
+
+	         shift_delay++;
+	         if (shift_delay >= 100) {  // Sau khoảng thời gian nhất định (ví dụ 100ms)
+	             //shiftLeftMatrixBuffer();  // Dịch chuyển ma trận sang trái
+	             shiftRightMatrixBuffer();
+	             shift_delay = 0;  // Reset lại bộ đếm thời gian
+	         }
+	     }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
