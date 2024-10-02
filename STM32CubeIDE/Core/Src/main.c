@@ -175,7 +175,7 @@ int main(void)
 //		  index_led_matrix = (index_led_matrix + 1) % 8;
 //	  }
 	  if(timer_flag[0] == 1){
-	         setTimer(0, 1);
+	         setTimer(0,1);
 	         updateLEDMatrix(index_led_matrix);
 	         index_led_matrix = (index_led_matrix + 1) % 8;
 
