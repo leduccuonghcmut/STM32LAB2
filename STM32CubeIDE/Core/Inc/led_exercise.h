@@ -1,6 +1,6 @@
 #include "main.h"
-#ifndef INC_LED_EXERCISE5_H_
-#define INC_LED_EXERCISE5_H_
+#ifndef INC_LED_EXERCISE_H_
+#define INC_LED_EXERCISE_H_
 
 extern const int MAX_LED;
 extern int index_led;

@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  000165d8  00000000  00000000  0002b1e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a033  00000000  00000000  000417b8  2**0
+ 17 .debug_line   0000a030  00000000  00000000  000417b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00081da4  00000000  00000000  0004b7eb  2**0
+ 18 .debug_str    00081da2  00000000  00000000  0004b7e8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cd58f  2**0
+ 19 .comment      00000053  00000000  00000000  000cd58a  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000026c4  00000000  00000000  000cd5e4  2**2
+ 20 .debug_frame  000026c4  00000000  00000000  000cd5e0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -77,7 +77,7 @@ Disassembly of section .text:
  8000148:	0800207c 	.word	0x0800207c
 
 0800014c <display7SEG>:
-#include "led_exercise5.h"
+#include <led_exercise.h>
 
 
 void display7SEG(int num){
