@@ -180,10 +180,10 @@ int main(void)
 	         index_led_matrix = (index_led_matrix + 1) % 8;
 
 	         shift_delay++;
-	         if (shift_delay >= 10) {  // Sau khoảng thời gian nhất định (ví dụ 100ms)
+	         if (shift_delay >= 100) {
 	             //shiftLeftMatrixBuffer();
 	             shiftRightMatrixBuffer();
-	             shift_delay = 0;  // Reset lại bộ đếm thời gian
+	             shift_delay = 0;
 	         }
 	     }
     /* USER CODE BEGIN 3 */
