@@ -180,7 +180,7 @@ int main(void)
 	         index_led_matrix = (index_led_matrix + 1) % 8;
 
 	         shift_delay++;
-	         if (shift_delay >= 100) {
+	         if (shift_delay >= 10) {
 	             //shiftLeftMatrixBuffer();
 	             shiftRightMatrixBuffer();
 	             shift_delay = 0;

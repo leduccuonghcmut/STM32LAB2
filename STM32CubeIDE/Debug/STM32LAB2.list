@@ -404,9 +404,9 @@ int main(void)
  8000362:	687b      	ldr	r3, [r7, #4]
  8000364:	3301      	adds	r3, #1
  8000366:	607b      	str	r3, [r7, #4]
-	         if (shift_delay >= 100) {
+	         if (shift_delay >= 10) {
  8000368:	687b      	ldr	r3, [r7, #4]
- 800036a:	2b63      	cmp	r3, #99	; 0x63
+ 800036a:	2b09      	cmp	r3, #9
  800036c:	dde0      	ble.n	8000330 <main+0x28>
 	             //shiftLeftMatrixBuffer();
 	             shiftRightMatrixBuffer();
